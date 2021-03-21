@@ -1,0 +1,197 @@
+@font-face {
+  font-family: anticSlab;
+  src: url("../fonts/Antic_Slab/AnticSlab-Regular.ttf");
+}
+
+@font-face {
+  font-family: montserratAlternate;
+  src: url("../fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf");
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#41295a), to(#2f0743));
+  background-image: linear-gradient(to bottom, #41295a, #2f0743);
+  background-attachment: fixed;
+  margin: 0;
+  text-align: center;
+}
+
+header nav {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+  padding: 10px 0;
+}
+
+header span {
+  color: white;
+  font-size: 3rem;
+  font-family: anticSlab;
+}
+
+main {
+  position: relative;
+}
+
+main #add {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.4)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+  border-radius: 0.25rem;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 70px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+main #add:hover {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.7)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+  color: #290909;
+}
+
+main #cards {
+  display: -ms-grid;
+  display: grid;
+  margin: auto;
+  margin-top: 70px;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 120px;
+}
+
+main #cards .card {
+  background-color: rgba(152, 193, 217, 0.6);
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: #070749;
+  font-family: montserratAlternate;
+  margin: auto;
+  width: 250px;
+  min-height: 300px;
+}
+
+main #cards .card .heading {
+  background: rgba(61, 90, 128, 0.6);
+  font-size: 25px;
+  padding: 15px 0;
+}
+
+main #cards .card .content {
+  padding-top: 15px;
+}
+
+main #cards .card .content p {
+  font-size: 20px;
+  line-height: 1.75rem;
+}
+
+main #cards .card .delete-btn {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+  background-attachment: fixed;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+  display: inline-block;
+  padding: 15px;
+  position: relative;
+  top: 5px;
+}
+
+main #cards .card .delete-btn:hover {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  color: #bb0101;
+}
+
+main #cards .card .delete-btn i {
+  pointer-events: none;
+}
+
+main #form-section {
+  position: absolute;
+  left: 0;
+  top: 35px;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: rgba(63, 35, 87, 0.75);
+}
+
+main #form-section.hidden {
+  display: none;
+}
+
+main #form-section #popupForm .formContainer {
+  border-radius: 10px;
+  background-color: rgba(152, 193, 217, 0.9);
+  max-width: 300px;
+  padding: 20px;
+}
+
+main #form-section #popupForm .formContainer select,
+main #form-section #popupForm .formContainer input[type='text'],
+main #form-section #popupForm .formContainer input[type='number'] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 20px 0;
+  border: none;
+  background: #eee;
+}
+
+main #form-section #popupForm .formContainer select:hover,
+main #form-section #popupForm .formContainer input[type='text']:focus,
+main #form-section #popupForm .formContainer input[type='number']:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+main #form-section #popupForm .formContainer .btn {
+  padding: 12px 20px;
+  border: none;
+  background-color: #8ebf42;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+main #form-section #popupForm .formContainer .cancel {
+  background-color: #cc0000;
+}
+
+main #form-section #popupForm .formContainer .btn:hover {
+  opacity: 1;
+}
+
+/* For mobilephones */
+@media only screen and (max-width: 600px) {
+  main .cards {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Portrait tablets */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  main .cards {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Landscape tablets */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  main .cards {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+/*# sourceMappingURL=style.css.map */

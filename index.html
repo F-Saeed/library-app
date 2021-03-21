@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>Library</title>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <span id="title">Library</span>
+      </nav>
+    </header>
+    <main>
+      <button id="add" onclick="openForm()">Add Book</button>
+      <section id="cards">
+        <!-- <div class="card" id="card1">
+          <div class="heading">Title</div>
+          <div class="content">
+            <p>Author</p>
+            <p>number of pages</p>
+            <p>Read?</p>
+          </div>
+          <div class="delete-btn" value="4343">
+            <i class="far fa-trash-alt fa-lg"></i>
+          </div>
+        </div> -->
+      </section>
+      <section id="form-section" class="hidden">
+        <div class="formPopup" id="popupForm">
+          <form action="/action_page.php" class="formContainer">
+            <h2>Enter Details</h2>
+            <label for="name">
+              <strong>Book Name</strong>
+            </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter Book Name"
+              name="name"
+              required
+            />
+            <label for="author">
+              <strong>Author Name</strong>
+            </label>
+            <input
+              type="text"
+              id="author"
+              placeholder="Enter Author Name"
+              name="author"
+              required
+            />
+            <label for="pages">
+              <strong>Number of Pages</strong>
+            </label>
+            <input
+              type="number"
+              id="pages"
+              placeholder="Enter number of pages"
+              name="pages"
+              min="1"
+              max="9999"
+              required
+            />
+            <label for="read">Have you read the book?</label>
+            <select name="read" id="read" required>
+              <option disabled selected value>-- select an option --</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+            <button type="submit" class="btn">Submit</button>
+            <button type="button" class="btn" id="cancel" onclick="closeForm()">
+              Cancel
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

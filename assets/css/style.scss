@@ -1,0 +1,176 @@
+@import 'fonts';
+@import 'variables';
+
+body {
+  background-image: linear-gradient(to bottom, #41295a, #2f0743);
+  background-attachment: fixed;
+  margin: 0;
+  text-align: center;
+}
+
+header {
+  nav {
+    @include transparent-background(0.4);
+    padding: 10px 0;
+  }
+
+  span {
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-family: anticSlab;
+  }
+}
+
+main {
+  position: relative;
+  #add {
+    @include transparent-background(0.4);
+    border-radius: 0.25rem;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    margin-top: 70px;
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      @include transparent-background(0.7);
+      color: rgb(41, 9, 9);
+    }
+  }
+
+  #cards {
+    display: grid;
+    margin: auto;
+    margin-top: 70px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 120px;
+
+    .card {
+      background-color: rgba(152, 193, 217, 0.6);
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      color: rgb(7, 7, 73);
+      font-family: montserratAlternate;
+      margin: auto;
+      width: 250px;
+      min-height: 300px;
+
+      .heading {
+        background: rgba(61, 90, 128, 0.6);
+        font-size: 25px;
+        padding: 15px 0;
+      }
+
+      .content {
+        padding-top: 15px;
+
+        p {
+          font-size: 20px;
+          line-height: 1.75rem;
+        }
+      }
+
+      .delete-btn {
+        @include transparent-background(0.3);
+        background-attachment: fixed;
+        border-radius: 5px;
+        cursor: pointer;
+        color: black;
+        display: inline-block;
+        padding: 15px;
+        position: relative;
+        top: 5px;
+        &:hover {
+          @include transparent-background(0.5);
+          color: #bb0101;
+        }
+
+        i {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  #form-section {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: hsla(272, 42%, 24%, 0.75);
+    &.hidden {
+      display: none;
+    }
+
+    #popupForm {
+      .formContainer {
+        border-radius: 10px;
+        background-color: rgba(152, 193, 217, 0.9);
+        max-width: 300px;
+        padding: 20px;
+
+        select,
+        input[type='text'],
+        input[type='number'] {
+          width: 90%;
+          padding: 15px;
+          margin: 5px 0 20px 0;
+          border: none;
+          background: #eee;
+        }
+        select:hover,
+        input[type='text']:focus,
+        input[type='number']:focus {
+          background-color: #ddd;
+          outline: none;
+        }
+        .btn {
+          padding: 12px 20px;
+          border: none;
+          background-color: #8ebf42;
+          color: #fff;
+          cursor: pointer;
+          width: 100%;
+          margin-bottom: 15px;
+          opacity: 0.8;
+        }
+        .cancel {
+          background-color: #cc0000;
+        }
+
+        .btn:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+/* For mobilephones */
+@media only screen and (max-width: 600px) {
+  main {
+    .cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+/* Portrait tablets */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  main {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+/* Landscape tablets */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  main {
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

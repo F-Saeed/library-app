@@ -1,0 +1,7 @@
+@mixin transparent-background($opacity) {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, $opacity),
+    rgba(255, 255, 255, $opacity)
+  );
+}
