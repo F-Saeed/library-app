@@ -135,13 +135,12 @@ main {
           width: 100%;
           margin-bottom: 15px;
           opacity: 0.8;
-        }
-        .cancel {
-          background-color: #cc0000;
-        }
-
-        .btn:hover {
-          opacity: 1;
+          &:hover {
+            opacity: 1;
+          }
+          &.cancel {
+            background-color: #cc0000;
+          }
         }
       }
     }

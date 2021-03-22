@@ -163,12 +163,12 @@ main #form-section #popupForm .formContainer .btn {
   opacity: 0.8;
 }
 
-main #form-section #popupForm .formContainer .cancel {
-  background-color: #cc0000;
-}
-
 main #form-section #popupForm .formContainer .btn:hover {
   opacity: 1;
+}
+
+main #form-section #popupForm .formContainer .btn.cancel {
+  background-color: #cc0000;
 }
 
 /* For mobilephones */
