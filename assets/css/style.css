@@ -121,7 +121,6 @@ main #form-section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: rgba(63, 35, 87, 0.75);
 }
 
 main #form-section.hidden {

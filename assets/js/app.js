@@ -1,7 +1,7 @@
 let myLibrary = [];
-let formSection = document.querySelector('#form-section');
-let form = document.querySelector('form');
-let cards = document.querySelector('#cards');
+const formSection = document.querySelector('#form-section');
+const form = document.querySelector('form');
+const cards = document.querySelector('#cards');
 
 /* retrieve information from localStorage, and add this information into myLibrary, and create cards */
 if (localStorage.getItem('myLibrary')) {
@@ -42,29 +42,29 @@ function Book(id, bookName, authorName, pages, read) {
 
 /* Create a new card based on the new book object added to myLibrary */
 function createCard(id, bookName, authorName, pages, read) {
-  let cardsSection = document.querySelector('#cards');
+  const cardsSection = document.querySelector('#cards');
 
-  let card = document.createElement('div');
+  const card = document.createElement('div');
   card.classList.add('card');
   card.setAttribute('id', id);
 
-  let title = document.createElement('div');
+  const title = document.createElement('div');
   title.classList.add('heading');
   title.textContent = bookName;
 
-  let content = document.createElement('div');
+  const content = document.createElement('div');
   content.classList.add('content');
 
-  let author = document.createElement('p');
+  const author = document.createElement('p');
   author.innerHTML = `Author: ${authorName}`;
 
-  let numPages = document.createElement('p');
+  const numPages = document.createElement('p');
   numPages.innerHTML = `Number of pages: ${pages}`;
 
-  let readStatus = document.createElement('p');
+  const readStatus = document.createElement('p');
   readStatus.innerHTML = `Read: ${read}`;
 
-  let removeButton = document.createElement('div');
+  const removeButton = document.createElement('div');
   removeButton.classList.add('delete-btn');
   removeButton.setAttribute('data-index', id);
   removeButton.setAttribute('hred', '#');
@@ -116,11 +116,11 @@ function storageAvailable(type) {
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  let id = uuidv4();
-  let bookName = document.querySelector('#name').value;
-  let authorName = document.querySelector('#author').value;
-  let pages = document.querySelector('#pages').value;
-  let read = document.querySelector('#read').value;
+  const id = uuidv4();
+  const bookName = document.querySelector('#name').value;
+  const authorName = document.querySelector('#author').value;
+  const pages = document.querySelector('#pages').value;
+  const read = document.querySelector('#read').value;
 
   if (storageAvailable('localStorage')) {
     addtoLibrary(id, bookName, authorName, pages, read, myLibrary);
@@ -135,14 +135,12 @@ form.addEventListener('submit', (event) => {
 cards.addEventListener('click', (event) => {
   if (event.target && event.target.className === 'delete-btn') {
     document.getElementById(event.target.dataset.index).remove();
-    let updatedLibrary = myLibrary.filter(
+    myLibrary = myLibrary.filter(
       (card) => card.id !== event.target.dataset.index
     );
 
-    myLibrary = updatedLibrary;
-
-    if (updatedLibrary.length) {
-      localStorage.setItem('myLibrary', JSON.stringify(updatedLibrary));
+    if (myLibrary.length) {
+      localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
     } else {
       localStorage.removeItem('myLibrary');
     }
