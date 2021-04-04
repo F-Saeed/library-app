@@ -32,12 +32,14 @@ function uuidv4() {
 }
 
 /* constructor for a new book */
-function Book(id, bookName, authorName, pages, read) {
-  this.id = id;
-  this.bookName = bookName;
-  this.authorName = authorName;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(id, bookName, authorName, pages, read) {
+    this.id = id;
+    this.bookName = bookName;
+    this.authorName = authorName;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 /* Create a new card based on the new book object added to myLibrary */
@@ -67,7 +69,7 @@ function createCard(id, bookName, authorName, pages, read) {
   const removeButton = document.createElement('div');
   removeButton.classList.add('delete-btn');
   removeButton.setAttribute('data-index', id);
-  removeButton.setAttribute('hred', '#');
+  removeButton.setAttribute('href', '#');
   removeButton.innerHTML = '<i class="far fa-trash-alt fa-lg"></i>';
 
   card.appendChild(title);
